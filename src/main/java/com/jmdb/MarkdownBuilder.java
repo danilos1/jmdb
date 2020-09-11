@@ -50,8 +50,12 @@ public class MarkdownBuilder {
         }
     }
 
-    public boolean add(MarkdownConversion element) {
+    public boolean append(MarkdownConversion element) {
         return elements.add(element);
+    }
+
+    public boolean append(char c) {
+        return elements.add(() -> String.valueOf(c));
     }
 
     public int size() {

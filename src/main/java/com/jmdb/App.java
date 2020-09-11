@@ -1,9 +1,7 @@
 package com.jmdb;
 
-import com.jmdb.content.MarkdownHeader;
-import com.jmdb.content.MarkdownList;
-import com.jmdb.content.MarkdownParagraph;
-import com.jmdb.content.MarkdownTable;
+import com.jmdb.content.*;
+import com.jmdb.properties.ImageAlign;
 import com.jmdb.properties.ListStyle;
 import com.jmdb.properties.TextStyle;
 
@@ -16,7 +14,7 @@ import java.io.FileNotFoundException;
 public class App 
 {
     public static void main( String[] args ) throws FileNotFoundException {
-        MarkdownFile hello = new MarkdownFile("/home/danoon/IdeaProjects/jmdb/src/main/java/com/jmdb/hello.md");
+        MarkdownFile hello = new MarkdownFile("hello.md");
         MarkdownBuilder builder = new MarkdownBuilder(hello,
                 new MarkdownParagraph("Hello", TextStyle.ITALIC),
                 new MarkdownList(new String[]{"This", "is", "ordered", "list"}, ListStyle.ORDERED),
@@ -25,7 +23,9 @@ public class App
         );
 
 
-        builder.add(new MarkdownHeader("JMDB is a convenient markdown parser", 4));
+        builder.append(new MarkdownHeader("JMDB is a convenient markdown parser", 4));
+        builder.append(new MarkdownImage("Anonymus", "https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd", ImageAlign.CENTER));
+        builder.append(new MarkdownImage("Anonymus", "https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd", ImageAlign.RIGHT));
 
         builder.build();
     }
