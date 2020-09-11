@@ -10,15 +10,20 @@ public class MarkdownImage implements MarkdownConversion {
     private String path;
     private String alt;
 
-
-    public MarkdownImage(String desc, File file, ImageAlign align) {
-        this.path = file.getAbsolutePath();
-        this.alt = desc;
-        this.align = align;
+    public MarkdownImage(String desc, File file) {
+        this(desc, file, ImageAlign.LEFT);
     }
 
-    public MarkdownImage(String alt, String URL, ImageAlign align) {
-        this.path = URL;
+    public MarkdownImage(String desc, String URL) {
+        this(desc, URL, ImageAlign.LEFT);
+    }
+
+    public MarkdownImage(String alt, File file, ImageAlign align) {
+        this(alt, file.getAbsolutePath(), align);
+    }
+
+    public MarkdownImage(String alt, String path, ImageAlign align) {
+        this.path = path;
         this.alt = alt;
         this.align = align;
     }

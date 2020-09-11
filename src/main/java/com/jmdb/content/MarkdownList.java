@@ -24,6 +24,7 @@ public class MarkdownList implements MarkdownConversion {
     @Override
     public String getAsMarkdown() {
         StringBuilder sb = new StringBuilder();
+
         if (listStyle == ListStyle.UNORDERED)
             for (int i = 0; i < list.size(); i++) {
                 sb.append("\n- ").append(list.get(i));

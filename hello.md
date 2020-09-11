@@ -16,8 +16,11 @@
 | Arturia KeyLab  | 6589   | 
 
 #### JMDB is a convenient markdown parser
-<p align="f">
+<p align="LEFT">
 	<img src="https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd" alt="Anonymus"/>
+</p>
+<p align="CENTER">
+	<img src="C:\Users\Danil\Desktop\anon.jpg" alt="Anonymus"/>
 </p>
 <p align="RIGHT">
 	<img src="https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd" alt="Anonymus"/>

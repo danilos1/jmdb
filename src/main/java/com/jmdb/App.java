@@ -5,6 +5,7 @@ import com.jmdb.properties.ImageAlign;
 import com.jmdb.properties.ListStyle;
 import com.jmdb.properties.TextStyle;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
@@ -24,8 +25,15 @@ public class App
 
 
         builder.append(new MarkdownHeader("JMDB is a convenient markdown parser", 4));
-        builder.append(new MarkdownImage("Anonymus", "https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd", ImageAlign.CENTER));
-        builder.append(new MarkdownImage("Anonymus", "https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd", ImageAlign.RIGHT));
+        builder.append(new MarkdownImage("Anonymus",
+                "https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd",
+                ImageAlign.LEFT));
+        builder.append(new MarkdownImage("Anonymus",
+                new File("C:\\Users\\Danil\\Desktop\\anon.jpg"),
+                ImageAlign.CENTER));
+        builder.append(new MarkdownImage("Anonymus",
+                "https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/anonymous-mask_white-bg.jpg?itok=tDET-oyd",
+                ImageAlign.RIGHT));
 
         builder.build();
     }
