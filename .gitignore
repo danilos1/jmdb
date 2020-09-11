@@ -3,4 +3,4 @@ syntax: glob
 pom.xml
 *.iml
 .idea
-target
+out
