@@ -1,7 +1,7 @@
 package com.jmdb;
 
 import com.jmdb.content.CodeStyle;
-import com.jmdb.content.TextStyle;
+import com.jmdb.content.text.TextStyle;
 import com.jmdb.content.header.MarkdownHeader;
 import com.jmdb.content.image.MarkdownImage;
 import com.jmdb.content.link.MarkdownLink;
@@ -9,7 +9,7 @@ import com.jmdb.content.lists.ListItem;
 import com.jmdb.content.lists.MarkdownList;
 import com.jmdb.content.lists.TaskListItem;
 import com.jmdb.content.others.MarkdownHorizontalRule;
-import com.jmdb.content.paragprah.MarkdownText;
+import com.jmdb.content.text.MarkdownText;
 import com.jmdb.content.shileds.MarkdownShield;
 import com.jmdb.content.table.MarkdownTable;
 import com.jmdb.content.lists.ListStyle;

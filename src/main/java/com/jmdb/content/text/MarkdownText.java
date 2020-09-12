@@ -1,8 +1,7 @@
-package com.jmdb.content.paragprah;
+package com.jmdb.content.text;
 
 import com.jmdb.MarkdownConversion;
 import com.jmdb.content.CodeStyle;
-import com.jmdb.content.TextStyle;
 
 public class MarkdownText implements MarkdownConversion {
     private String text;

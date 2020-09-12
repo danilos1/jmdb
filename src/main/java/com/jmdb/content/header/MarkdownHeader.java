@@ -1,7 +1,7 @@
 package com.jmdb.content.header;
 
 import com.jmdb.MarkdownConversion;
-import com.jmdb.content.TextStyle;
+import com.jmdb.content.text.TextStyle;
 
 public class MarkdownHeader implements MarkdownConversion {
     private final int headerLevel;
