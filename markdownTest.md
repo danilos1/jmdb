@@ -38,3 +38,7 @@ import java.util.List;
 
 > The blockquote element is used to indicate the quotation of a large section of text from another source.
 
+<ins>Underlined text</ins>
+
+<samp>Monospaced text</samp>
+

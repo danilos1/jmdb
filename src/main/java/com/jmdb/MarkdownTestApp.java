@@ -1,6 +1,7 @@
 package com.jmdb;
 
 import com.jmdb.content.CodeStyle;
+import com.jmdb.content.TextStyle;
 import com.jmdb.content.header.MarkdownHeader;
 import com.jmdb.content.image.MarkdownImage;
 import com.jmdb.content.link.MarkdownLink;
@@ -68,6 +69,8 @@ public class MarkdownTestApp
         builder.append(
                 new MarkdownText("The blockquote element is used to indicate the quotation of a large section of text from another source.")
                 .asBlockquote());
+        builder.append(new MarkdownText("Underlined text", TextStyle.UNDERLINED));
+        builder.append(new MarkdownText("Monospaced text", TextStyle.MONOSPACED));
         builder.build();
     }
 }

@@ -6,15 +6,27 @@ public enum TextStyle {
     ITALIC("*"),
     STRIKETHROUGH("~~"),
     CODE("```"),
-    BLOCKQUOTE("> ");
+    BLOCKQUOTE("> ",""),
+    UNDERLINED("<ins>","</ins>"),
+    MONOSPACED("<samp>","</samp>");
 
-    private final String mark;
+    private final String startMark;
+    private final String endMark;
 
     TextStyle(String mark) {
-        this.mark = mark;
+        this(mark, mark);
     }
 
-    public String getMark() {
-        return mark;
+    TextStyle(String startMark, String endMark) {
+        this.startMark = startMark;
+        this.endMark = endMark;
+    }
+
+    public String getStartMark() {
+        return startMark;
+    }
+
+    public String getEndMark() {
+        return endMark;
     }
 }

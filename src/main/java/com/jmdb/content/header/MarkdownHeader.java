@@ -24,7 +24,7 @@ public class MarkdownHeader implements MarkdownConversion {
     }
 
     public MarkdownHeader emphasize(TextStyle style) {
-        header = style.getMark() + header + style.getMark();
+        header = style.getStartMark() + header + style.getEndMark();
         return this;
     }
 

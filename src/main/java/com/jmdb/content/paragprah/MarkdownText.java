@@ -11,30 +11,17 @@ public class MarkdownText implements MarkdownConversion {
         this.text = text;
     }
 
-    public MarkdownText(String paragraph) {
-        this(paragraph, TextStyle.REGULAR);
+    public MarkdownText(String text) {
+        this(text, TextStyle.REGULAR);
     }
 
 
-    public MarkdownText(String paragraph, TextStyle textStyle) {
-        String marks = "";
-        switch (textStyle) {
-            case BOLD:
-                marks = "**";
-                break;
-            case ITALIC:
-                marks = "*";
-                break;
-            case STRIKETHROUGH:
-                marks = "~~";
-                break;
-            case REGULAR: break;
-        }
-        text = marks+paragraph+marks;
+    public MarkdownText(String text, TextStyle textStyle) {
+        this.text = textStyle.getStartMark()+text+textStyle.getEndMark();
     }
 
     public MarkdownText emphasize(TextStyle style) {
-        text = style.getMark() + text + style.getMark();
+        text = style.getStartMark() + text + style.getEndMark();
         return this;
     }
 
@@ -50,18 +37,18 @@ public class MarkdownText implements MarkdownConversion {
     }
 
     public MarkdownText asCode() {
-        text = TextStyle.CODE.getMark() + text + TextStyle.CODE.getMark();
+        text = TextStyle.CODE.getStartMark() + text + TextStyle.CODE.getEndMark();
         return this;
     }
 
     public MarkdownText asCode(CodeStyle codeStyle) {
-        text = TextStyle.CODE.getMark() + codeStyle +
-                '\n'+ text +'\n' + TextStyle.CODE.getMark();
+        text = TextStyle.CODE.getStartMark() + codeStyle +
+                '\n'+ text +'\n' + TextStyle.CODE.getEndMark();
         return this;
     }
 
     public MarkdownText asBlockquote() {
-        text = TextStyle.BLOCKQUOTE.getMark() + text;
+        text = TextStyle.BLOCKQUOTE.getStartMark() + text;
         return this;
     }
 }
