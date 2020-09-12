@@ -1,6 +1,6 @@
 package com.jmdb;
 
-import com.jmdb.content.CodeStyle;
+import com.jmdb.content.text.CodeStyle;
 import com.jmdb.content.text.TextStyle;
 import com.jmdb.content.header.MarkdownHeader;
 import com.jmdb.content.image.MarkdownImage;

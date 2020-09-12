@@ -1,4 +1,4 @@
-package com.jmdb.content;
+package com.jmdb.content.text;
 
 public enum CodeStyle {
     JAVA, PYTHON, JAVASCRIPT, SWIFT, PHP, KOTLIN,
