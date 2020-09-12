@@ -1,6 +1,6 @@
 package com.jmdb.exceptions;
 
-import com.jmdb.content.MarkdownTable;
+import com.jmdb.content.table.MarkdownTable;
 
 /**
  * <code>TableSizeException</code> is used to indicate if user have problems with row or column indexes definition or

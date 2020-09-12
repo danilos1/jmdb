@@ -1,6 +1,6 @@
 package com.jmdb.exceptions;
 
-import com.jmdb.content.MarkdownTable;
+import com.jmdb.content.table.MarkdownTable;
 
 /**
  * <code>TableTypeException</code> is used to indicate if user have problems with column types definition.
