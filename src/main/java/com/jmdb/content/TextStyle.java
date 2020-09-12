@@ -4,7 +4,9 @@ public enum TextStyle {
     REGULAR(""),
     BOLD("**"),
     ITALIC("*"),
-    STRIKETHROUGH("~~");
+    STRIKETHROUGH("~~"),
+    CODE("```"),
+    BLOCKQUOTE("> ");
 
     private final String mark;
 

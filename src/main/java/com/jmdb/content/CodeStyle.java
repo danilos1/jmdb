@@ -1,0 +1,7 @@
+package com.jmdb.content;
+
+public enum CodeStyle {
+    JAVA, PYTHON, JAVASCRIPT, SWIFT, PHP, KOTLIN,
+    C, CPP, CSHARP, ASSEMBLY, RUBY, SCALA, HASKELL, ADA,
+    PASCAL, LISP, MATLAB, SQL, HTML, CSS, JSON, COBOL, DART
+}

@@ -1,21 +1,22 @@
 package com.jmdb.content.paragprah;
 
 import com.jmdb.MarkdownConversion;
+import com.jmdb.content.CodeStyle;
 import com.jmdb.content.TextStyle;
 
-public class MarkdownParagraph implements MarkdownConversion {
+public class MarkdownText implements MarkdownConversion {
     private String text;
 
     public void setText(String text) {
         this.text = text;
     }
 
-    public MarkdownParagraph(String paragraph) {
+    public MarkdownText(String paragraph) {
         this(paragraph, TextStyle.REGULAR);
     }
 
 
-    public MarkdownParagraph(String paragraph, TextStyle textStyle) {
+    public MarkdownText(String paragraph, TextStyle textStyle) {
         String marks = "";
         switch (textStyle) {
             case BOLD:
@@ -32,7 +33,7 @@ public class MarkdownParagraph implements MarkdownConversion {
         text = marks+paragraph+marks;
     }
 
-    public MarkdownParagraph emphasize(TextStyle style) {
+    public MarkdownText emphasize(TextStyle style) {
         text = style.getMark() + text + style.getMark();
         return this;
     }
@@ -46,5 +47,21 @@ public class MarkdownParagraph implements MarkdownConversion {
     @Override
     public String toString() {
         return "MarkdownParagraph{"+text+"}";
+    }
+
+    public MarkdownText asCode() {
+        text = TextStyle.CODE.getMark() + text + TextStyle.CODE.getMark();
+        return this;
+    }
+
+    public MarkdownText asCode(CodeStyle codeStyle) {
+        text = TextStyle.CODE.getMark() + codeStyle +
+                '\n'+ text +'\n' + TextStyle.CODE.getMark();
+        return this;
+    }
+
+    public MarkdownText asBlockquote() {
+        text = TextStyle.BLOCKQUOTE.getMark() + text;
+        return this;
     }
 }
