@@ -27,7 +27,7 @@ public class MarkdownText implements MarkdownConversion {
 
 
     @Override
-    public String getAsMarkdown() {
+    public String toMarkdown() {
         return text+'\n';
     }
 

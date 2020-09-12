@@ -21,7 +21,7 @@ public class MarkdownLink implements MarkdownConversion {
     }
 
     @Override
-    public String getAsMarkdown() {
+    public String toMarkdown() {
         return String.format("[%s](%s)%n", text, URL);
     }
 }

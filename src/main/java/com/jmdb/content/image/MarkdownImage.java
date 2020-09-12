@@ -44,7 +44,7 @@ public class MarkdownImage implements MarkdownConversion {
     }
 
     @Override
-    public String getAsMarkdown() {
+    public String toMarkdown() {
         return String.format("<p align=\"%s\">\n" +
                 "\t<img src=\"%s\" alt=\"%s\"/>\n" +
                 "</p>\n", align.name(), path, alt);

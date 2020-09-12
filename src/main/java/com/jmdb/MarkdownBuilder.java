@@ -40,7 +40,7 @@ public class MarkdownBuilder {
     public boolean build(boolean append) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, append))) {
             for (int i = 0; i < elements.size(); i++) {
-                bufferedWriter.write(elements.get(i).getAsMarkdown());
+                bufferedWriter.write(elements.get(i).toMarkdown());
                 bufferedWriter.append("\n");
             }
             return true;

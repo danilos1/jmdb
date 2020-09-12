@@ -10,6 +10,7 @@ import com.jmdb.content.lists.MarkdownList;
 import com.jmdb.content.lists.TaskListItem;
 import com.jmdb.content.others.MarkdownHorizontalRule;
 import com.jmdb.content.paragprah.MarkdownText;
+import com.jmdb.content.shileds.MarkdownShield;
 import com.jmdb.content.table.MarkdownTable;
 import com.jmdb.content.lists.ListStyle;
 import com.jmdb.content.table.TableAlign;
@@ -71,6 +72,8 @@ public class MarkdownTestApp
                 .asBlockquote());
         builder.append(new MarkdownText("Underlined text", TextStyle.UNDERLINED));
         builder.append(new MarkdownText("Monospaced text", TextStyle.MONOSPACED));
+        builder.append(new MarkdownShield("This is a test shield", "Shield message", "green",
+                "https://github.com/danilos1/jmdb/blob/master/markdownTest.md"));
         builder.build();
     }
 }

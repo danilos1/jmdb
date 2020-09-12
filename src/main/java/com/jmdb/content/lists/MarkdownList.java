@@ -26,7 +26,7 @@ public class MarkdownList implements MarkdownConversion {
 
 
     @Override
-    public String getAsMarkdown() {
+    public String toMarkdown() {
         StringBuilder sb = new StringBuilder();
 
         if (listStyle == ListStyle.UNORDERED)

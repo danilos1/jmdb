@@ -17,7 +17,7 @@ public class MarkdownHeader implements MarkdownConversion {
     }
 
     @Override
-    public String getAsMarkdown() {
+    public String toMarkdown() {
         String[] levels = {"# ", "## ", "### ", "#### ", "##### ", "###### "};
         String hl = levels[headerLevel - 1];
         return hl+header+'\n';

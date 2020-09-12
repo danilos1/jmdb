@@ -31,7 +31,7 @@ public class MarkdownHorizontalRule implements MarkdownConversion {
     }
 
     @Override
-    public String getAsMarkdown() {
+    public String toMarkdown() {
         return horizontalRule;
     }
 }

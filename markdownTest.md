@@ -42,3 +42,4 @@ import java.util.List;
 
 <samp>Monospaced text</samp>
 
+[![This is a test shield: Shield message](https://img.shields.io/badge/This is a test shield-Shield message-green.svg)](https://github.com/danilos1/jmdb/blob/master/markdownTest.md)

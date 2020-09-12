@@ -197,7 +197,7 @@ public class MarkdownTable implements MarkdownConversion {
     }
 
     @Override
-    public String getAsMarkdown() {
+    public String toMarkdown() {
         StringBuilder sb = new StringBuilder();
 
         int[] columnLengths = new int[col];
