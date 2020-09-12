@@ -72,7 +72,7 @@ public class MarkdownTestApp
                 .asBlockquote());
         builder.append(new MarkdownText("Underlined text", TextStyle.UNDERLINED));
         builder.append(new MarkdownText("Monospaced text", TextStyle.MONOSPACED));
-        builder.append(new MarkdownShield("This is a test shield", "Shield message", "green",
+        builder.append(new MarkdownShield("Test shield ", " Shield message ", "blue",
                 "https://github.com/danilos1/jmdb/blob/master/markdownTest.md"));
         builder.build();
     }

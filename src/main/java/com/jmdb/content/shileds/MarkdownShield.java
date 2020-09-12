@@ -8,9 +8,10 @@ public class MarkdownShield implements MarkdownConversion {
     private String color;
     private String URL;
 
+
     public MarkdownShield(String label, String message, String color, String URL) {
-        this.label = label;
-        this.message = message;
+        this.label = label.replaceAll(" ", "_");
+        this.message = message.replaceAll(" ", "_");
         this.color = color;
         this.URL = URL;
     }
