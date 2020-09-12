@@ -1,6 +1,6 @@
 package com.jmdb.content.others;
 
-import com.jmdb.MarkdownConversion;
+import com.jmdb.core.MarkdownConversion;
 import com.jmdb.exceptions.MarkdownHorizontalRuleException;
 
 public class MarkdownHorizontalRule implements MarkdownConversion {

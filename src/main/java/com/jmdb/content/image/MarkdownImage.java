@@ -1,6 +1,6 @@
 package com.jmdb.content.image;
 
-import com.jmdb.MarkdownConversion;
+import com.jmdb.core.MarkdownConversion;
 
 import java.io.File;
 

@@ -1,6 +1,6 @@
 package com.jmdb.content.lists;
 
-import com.jmdb.MarkdownConversion;
+import com.jmdb.core.MarkdownConversion;
 
 import java.util.ArrayList;
 import java.util.Arrays;

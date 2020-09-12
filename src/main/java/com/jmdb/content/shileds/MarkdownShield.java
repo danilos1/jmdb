@@ -1,6 +1,6 @@
 package com.jmdb.content.shileds;
 
-import com.jmdb.MarkdownConversion;
+import com.jmdb.core.MarkdownConversion;
 
 public class MarkdownShield implements MarkdownConversion {
     private String label;

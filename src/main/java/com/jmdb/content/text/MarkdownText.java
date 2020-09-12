@@ -1,6 +1,6 @@
 package com.jmdb.content.text;
 
-import com.jmdb.MarkdownConversion;
+import com.jmdb.core.MarkdownConversion;
 
 public class MarkdownText implements MarkdownConversion {
     private String text;

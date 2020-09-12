@@ -1,4 +1,4 @@
-package com.jmdb;
+package com.jmdb.core;
 
 import com.jmdb.exceptions.MarkdownInvalidFileFormatException;
 

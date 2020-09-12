@@ -1,6 +1,6 @@
 package com.jmdb.content.table;
 
-import com.jmdb.MarkdownConversion;
+import com.jmdb.core.MarkdownConversion;
 import com.jmdb.exceptions.MarkdownTableSizeException;
 import com.jmdb.exceptions.MarkdownTableTypeException;
 

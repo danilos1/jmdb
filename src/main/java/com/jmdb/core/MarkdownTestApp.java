@@ -1,4 +1,4 @@
-package com.jmdb;
+package com.jmdb.core;
 
 import com.jmdb.content.text.CodeStyle;
 import com.jmdb.content.text.TextStyle;

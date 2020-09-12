@@ -1,6 +1,6 @@
 package com.jmdb.content.link;
 
-import com.jmdb.MarkdownConversion;
+import com.jmdb.core.MarkdownConversion;
 
 public class MarkdownLink implements MarkdownConversion {
     private String URL;

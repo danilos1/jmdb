@@ -1,4 +1,4 @@
-package com.jmdb;
+package com.jmdb.core;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
