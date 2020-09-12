@@ -2,4 +2,4 @@ syntax: glob
 
 *.iml
 .idea
-target
+out
