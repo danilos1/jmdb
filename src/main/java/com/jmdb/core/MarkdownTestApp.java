@@ -2,6 +2,7 @@ package com.jmdb.core;
 
 import com.jmdb.content.lists.*;
 import com.jmdb.content.text.CodeStyle;
+import com.jmdb.content.text.MarkdownCode;
 import com.jmdb.content.text.TextStyle;
 import com.jmdb.content.header.MarkdownHeader;
 import com.jmdb.content.image.MarkdownImage;
@@ -12,11 +13,12 @@ import com.jmdb.content.shileds.MarkdownShield;
 import com.jmdb.content.table.MarkdownTable;
 import com.jmdb.content.table.TableAlign;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
- * Hello world!
- *
+ * This is a class for presenting all JMDB features. All result you could see at markdownTest.md file
+ * in the project root.
  */
 public class MarkdownTestApp
 {
@@ -80,6 +82,11 @@ public class MarkdownTestApp
         builder.append(
                 new MarkdownText("This is a NOTE block -- a section, where you might denote essential info")
                 .setTextStyle(TextStyle.NOTE)
+        );
+        builder.append(new MarkdownText("Below you could see, how to insert a file with code via MarkdownCode object:"));
+        builder.append(new MarkdownCode(
+                new File("C:\\Users\\Danil\\IdeaProjects\\jmdb\\src\\main\\java\\com\\jmdb\\core\\MarkdownTestApp.java"),
+                CodeStyle.JAVA)
         );
         builder.build();
     }

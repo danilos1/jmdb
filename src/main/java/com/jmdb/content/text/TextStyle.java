@@ -5,7 +5,7 @@ public enum TextStyle {
     BOLD("**"),
     ITALIC("*"),
     STRIKETHROUGH("~~"),
-    CODE("```", "\n```"),
+    CODE("```", "```"),
     BLOCKQUOTE("> ",""),
     UNDERLINED("<ins>","</ins>"),
     MONOSPACED("<samp>","</samp>"),

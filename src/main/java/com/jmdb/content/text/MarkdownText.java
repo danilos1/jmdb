@@ -9,6 +9,10 @@ public class MarkdownText implements MarkdownConversion {
         this.text = text;
     }
 
+    public void append(String newText) {
+        text = text + '\n' + newText;
+    }
+
     public MarkdownText(String text) {
         this(text, TextStyle.REGULAR);
     }
