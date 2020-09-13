@@ -1,18 +1,15 @@
 package com.jmdb.core;
 
+import com.jmdb.content.lists.*;
 import com.jmdb.content.text.CodeStyle;
 import com.jmdb.content.text.TextStyle;
 import com.jmdb.content.header.MarkdownHeader;
 import com.jmdb.content.image.MarkdownImage;
 import com.jmdb.content.link.MarkdownLink;
-import com.jmdb.content.lists.ListItem;
-import com.jmdb.content.lists.MarkdownList;
-import com.jmdb.content.lists.TaskListItem;
 import com.jmdb.content.others.MarkdownHorizontalRule;
 import com.jmdb.content.text.MarkdownText;
 import com.jmdb.content.shileds.MarkdownShield;
 import com.jmdb.content.table.MarkdownTable;
-import com.jmdb.content.lists.ListStyle;
 import com.jmdb.content.table.TableAlign;
 
 import java.io.FileNotFoundException;
@@ -74,6 +71,13 @@ public class MarkdownTestApp
         builder.append(new MarkdownText("Monospaced text", TextStyle.MONOSPACED));
         builder.append(new MarkdownShield("Test shield ", " Shield message ", "blue",
                 "https://github.com/danilos1/jmdb/blob/master/markdownTest.md"));
+        builder.append(new MarkdownDefinitionList(
+                new DefinitionListItem("Term1","Definition for the first term", "Other definition for the first term"),
+                new DefinitionListItem("Term2","Definition for the second term"),
+                new DefinitionListItem("Term3","Definition for the third term", "The second definition",
+                        "The third definition")
+        ));
+        builder.append(new MarkdownText("You can see above all features of the JMDB"));
         builder.build();
     }
 }

@@ -50,7 +50,7 @@ public class MarkdownShield implements MarkdownConversion {
 
     @Override
     public String toMarkdown() {
-        return String.format("[![%s: %s](https://img.shields.io/badge/%s-%s-%s.svg)](%s)",
+        return String.format("[![%s: %s](https://img.shields.io/badge/%s-%s-%s.svg)](%s)%n",
                 label, message, label, message, color, URL);
     }
 }

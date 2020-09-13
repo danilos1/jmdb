@@ -43,3 +43,18 @@ import java.util.List;
 <samp>Monospaced text</samp>
 
 [![Test_shield_: _Shield_message_](https://img.shields.io/badge/Test_shield_-_Shield_message_-blue.svg)](https://github.com/danilos1/jmdb/blob/master/markdownTest.md)
+
+<dl>
+	<dt>Term1</dt>
+	<dd>Definition for the first term</dd>
+	<dd>Other definition for the first term</dd>
+	<dt>Term2</dt>
+	<dd>Definition for the second term</dd>
+	<dt>Term3</dt>
+	<dd>Definition for the third term</dd>
+	<dd>The second definition</dd>
+	<dd>The third definition</dd>
+</dl>
+
+You can see above all features of the JMDB
+
