@@ -66,7 +66,7 @@ public class MarkdownTestApp
         builder.append(new MarkdownImage("https://specials-images.forbesimg.com/imageserve/5efc6a13531e1500073c6521/960x0.jpg?fit=scale", "Anon"));
         builder.append(
                 new MarkdownText("The blockquote element is used to indicate the quotation of a large section of text from another source.")
-                .asBlockquote());
+                .setTextStyle(TextStyle.BLOCKQUOTE));
         builder.append(new MarkdownText("Underlined text", TextStyle.UNDERLINED));
         builder.append(new MarkdownText("Monospaced text", TextStyle.MONOSPACED));
         builder.append(new MarkdownShield("Test shield ", " Shield message ", "blue",
@@ -77,7 +77,10 @@ public class MarkdownTestApp
                 new DefinitionListItem("Term3","Definition for the third term", "The second definition",
                         "The third definition")
         ));
-        builder.append(new MarkdownText("You can see above all features of the JMDB"));
+        builder.append(
+                new MarkdownText("This is a NOTE block -- a section, where you might denote essential info")
+                .setTextStyle(TextStyle.NOTE)
+        );
         builder.build();
     }
 }

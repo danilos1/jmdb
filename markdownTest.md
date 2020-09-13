@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 ```
 
 [My Github account](https://github.com/danilos1)
@@ -56,5 +57,5 @@ import java.util.List;
 	<dd>The third definition</dd>
 </dl>
 
-You can see above all features of the JMDB
+> ***NOTE:*** This is a NOTE block -- a section, where you might denote essential info
 

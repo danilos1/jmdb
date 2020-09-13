@@ -5,10 +5,11 @@ public enum TextStyle {
     BOLD("**"),
     ITALIC("*"),
     STRIKETHROUGH("~~"),
-    CODE("```"),
+    CODE("```", "\n```"),
     BLOCKQUOTE("> ",""),
     UNDERLINED("<ins>","</ins>"),
-    MONOSPACED("<samp>","</samp>");
+    MONOSPACED("<samp>","</samp>"),
+    NOTE("> ***NOTE:*** ", "");
 
     private final String startMark;
     private final String endMark;

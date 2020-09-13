@@ -18,7 +18,7 @@ public class MarkdownText implements MarkdownConversion {
         this.text = textStyle.getStartMark()+text+textStyle.getEndMark();
     }
 
-    public MarkdownText emphasize(TextStyle style) {
+    public MarkdownText setTextStyle(TextStyle style) {
         text = style.getStartMark() + text + style.getEndMark();
         return this;
     }
@@ -34,19 +34,9 @@ public class MarkdownText implements MarkdownConversion {
         return "MarkdownParagraph{"+text+"}";
     }
 
-    public MarkdownText asCode() {
-        text = TextStyle.CODE.getStartMark() + text + TextStyle.CODE.getEndMark();
-        return this;
-    }
 
     public MarkdownText asCode(CodeStyle codeStyle) {
-        text = TextStyle.CODE.getStartMark() + codeStyle +
-                '\n'+ text +'\n' + TextStyle.CODE.getEndMark();
-        return this;
-    }
-
-    public MarkdownText asBlockquote() {
-        text = TextStyle.BLOCKQUOTE.getStartMark() + text;
+        text = TextStyle.CODE.getStartMark() + codeStyle + "\n" + text +"\n" + TextStyle.CODE.getEndMark();
         return this;
     }
 }
