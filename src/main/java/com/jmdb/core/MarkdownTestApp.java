@@ -68,7 +68,7 @@ public class MarkdownTestApp
         builder.append(new MarkdownImage("https://specials-images.forbesimg.com/imageserve/5efc6a13531e1500073c6521/960x0.jpg?fit=scale", "Anon"));
         builder.append(
                 new MarkdownText("The blockquote element is used to indicate the quotation of a large section of text from another source.")
-                .setTextStyle(TextStyle.BLOCKQUOTE));
+                .emphasize(TextStyle.BLOCKQUOTE));
         builder.append(new MarkdownText("Underlined text", TextStyle.UNDERLINED));
         builder.append(new MarkdownText("Monospaced text", TextStyle.MONOSPACED));
         builder.append(new MarkdownShield("Test shield ", " Shield message ", "blue",
@@ -81,12 +81,22 @@ public class MarkdownTestApp
         ));
         builder.append(
                 new MarkdownText("This is a NOTE block -- a section, where you might denote essential info")
-                .setTextStyle(TextStyle.NOTE)
+                .emphasize(TextStyle.NOTE)
         );
         builder.append(new MarkdownText("Below you could see, how to insert a file with code via MarkdownCode object:"));
         builder.append(new MarkdownCode(
                 new File("C:\\Users\\Danil\\IdeaProjects\\jmdb\\src\\main\\java\\com\\jmdb\\core\\MarkdownTestApp.java"),
                 CodeStyle.JAVA)
+        );
+        builder.append(
+                new MarkdownText("Ctrl").emphasize(TextStyle.KEYBOARD)
+                .append(" + ").emphasize(TextStyle.ITALIC)
+                .append("Shift").emphasize(TextStyle.KEYBOARD)
+                .append("+")
+                .append("A").emphasize(TextStyle.KEYBOARD)
+                .setTextStyle(TextStyle.NOTE)
+
+                .append("you can add keyboard hotkeys as well").emphasize(TextStyle.UNDERLINED)
         );
         builder.build();
     }

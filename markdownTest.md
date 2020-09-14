@@ -1,6 +1,6 @@
 # The first-level header
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
 
 -------------------------
 
@@ -13,22 +13,22 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 2. Description
 3. Text
 
-This is a task list:
+This is a task list: 
 
 1. [x] Syntax
 2. [ ] Description
 3. [x] Text
 
 ```JAVA
-package com.jmdb;
+ package com.jmdb;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-```
+import java.util.List; 
+``` 
 
 [My Github account](https://github.com/danilos1)
 
@@ -36,11 +36,11 @@ import java.util.List;
 	<img src="https://specials-images.forbesimg.com/imageserve/5efc6a13531e1500073c6521/960x0.jpg?fit=scale" alt="Anon"/>
 </p>
 
-> The blockquote element is used to indicate the quotation of a large section of text from another source.
+> The blockquote element is used to indicate the quotation of a large section of text from another source. 
 
-<ins>Underlined text</ins>
+<ins>Underlined text</ins> 
 
-<samp>Monospaced text</samp>
+<samp>Monospaced text</samp> 
 
 [![Test_shield_: _Shield_message_](https://img.shields.io/badge/Test_shield_-_Shield_message_-blue.svg)](https://github.com/danilos1/jmdb/blob/master/markdownTest.md)
 
@@ -56,12 +56,12 @@ import java.util.List;
 	<dd>The third definition</dd>
 </dl>
 
-> ***NOTE:*** This is a NOTE block -- a section, where you might denote essential info
+> ***NOTE:*** This is a NOTE block -- a section, where you might denote essential info 
 
-Below you could see, how to insert a file with code via MarkdownCode object:
+Below you could see, how to insert a file with code via MarkdownCode object: 
 
 ```JAVA
-package com.jmdb.core;
+ package com.jmdb.core;
 
 import com.jmdb.content.lists.*;
 import com.jmdb.content.text.CodeStyle;
@@ -131,7 +131,7 @@ public class MarkdownTestApp
         builder.append(new MarkdownImage("https://specials-images.forbesimg.com/imageserve/5efc6a13531e1500073c6521/960x0.jpg?fit=scale", "Anon"));
         builder.append(
                 new MarkdownText("The blockquote element is used to indicate the quotation of a large section of text from another source.")
-                .setTextStyle(TextStyle.BLOCKQUOTE));
+                .emphasize(TextStyle.BLOCKQUOTE));
         builder.append(new MarkdownText("Underlined text", TextStyle.UNDERLINED));
         builder.append(new MarkdownText("Monospaced text", TextStyle.MONOSPACED));
         builder.append(new MarkdownShield("Test shield ", " Shield message ", "blue",
@@ -144,16 +144,28 @@ public class MarkdownTestApp
         ));
         builder.append(
                 new MarkdownText("This is a NOTE block -- a section, where you might denote essential info")
-                .setTextStyle(TextStyle.NOTE)
+                .emphasize(TextStyle.NOTE)
         );
         builder.append(new MarkdownText("Below you could see, how to insert a file with code via MarkdownCode object:"));
         builder.append(new MarkdownCode(
                 new File("C:\\Users\\Danil\\IdeaProjects\\jmdb\\src\\main\\java\\com\\jmdb\\core\\MarkdownTestApp.java"),
                 CodeStyle.JAVA)
         );
+        builder.append(
+                new MarkdownText("Ctrl").emphasize(TextStyle.KEYBOARD)
+                .append(" + ").emphasize(TextStyle.ITALIC)
+                .append("Shift").emphasize(TextStyle.KEYBOARD)
+                .append("+")
+                .append("A").emphasize(TextStyle.KEYBOARD)
+                .setTextStyle(TextStyle.NOTE)
+
+                .append("you can add keyboard hotkeys as well").emphasize(TextStyle.UNDERLINED)
+        );
         builder.build();
     }
 }
+ 
+``` 
 
-```
+> ***NOTE:***  <kbd>Ctrl</kbd> *+* <kbd>Shift</kbd> + <kbd>A</kbd>  <ins>you can add keyboard hotkeys as well</ins> 
 
