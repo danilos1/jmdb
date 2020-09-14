@@ -3,14 +3,14 @@ package com.jmdb.content.text;
 public enum TextStyle {
     REGULAR(""),
     BOLD("**"),
-    ITALIC("*"),
+    ITALIC("<i>","</i>"),
     STRIKETHROUGH("~~"),
     CODE("```", "\n```"),
     BLOCKQUOTE("> ",""),
     UNDERLINED("<ins>","</ins>"),
     MONOSPACED("<samp>","</samp>"),
     KEYBOARD("<kbd>","</kbd>"),
-    NOTE("<table<td><blockquote>:information_source:<i><b>NOTE: </b></i>", "</blockquote></td></table");
+    NOTE("<table><td><blockquote>:information_source:<i><b>NOTE: </b></i>", "</blockquote></td></table");
 
     private final String startMark;
     private final String endMark;
