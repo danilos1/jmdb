@@ -94,9 +94,8 @@ public class MarkdownTestApp
                 .append("Shift").emphasize(TextStyle.KEYBOARD)
                 .append("+")
                 .append("A").emphasize(TextStyle.KEYBOARD)
-                .setTextStyle(TextStyle.NOTE)
-
                 .append("you can add keyboard hotkeys as well").emphasize(TextStyle.UNDERLINED)
+                .setTextStyle(TextStyle.NOTE)
         );
         builder.build();
     }

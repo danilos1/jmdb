@@ -56,7 +56,7 @@ import java.util.List;
 	<dd>The third definition</dd>
 </dl>
 
-> ***NOTE:*** This is a NOTE block -- a section, where you might denote essential info 
+<table<td><blockquote>:information_source:<i><b>NOTE: </b></i>This is a NOTE block -- a section, where you might denote essential info</blockquote></td></table 
 
 Below you could see, how to insert a file with code via MarkdownCode object: 
 
@@ -157,9 +157,8 @@ public class MarkdownTestApp
                 .append("Shift").emphasize(TextStyle.KEYBOARD)
                 .append("+")
                 .append("A").emphasize(TextStyle.KEYBOARD)
-                .setTextStyle(TextStyle.NOTE)
-
                 .append("you can add keyboard hotkeys as well").emphasize(TextStyle.UNDERLINED)
+                .setTextStyle(TextStyle.NOTE)
         );
         builder.build();
     }
@@ -167,5 +166,5 @@ public class MarkdownTestApp
  
 ``` 
 
-> ***NOTE:***  <kbd>Ctrl</kbd> *+* <kbd>Shift</kbd> + <kbd>A</kbd>  <ins>you can add keyboard hotkeys as well</ins> 
+<table<td><blockquote>:information_source:<i><b>NOTE: </b></i> <kbd>Ctrl</kbd> *+* <kbd>Shift</kbd> + <kbd>A</kbd> <ins>you can add keyboard hotkeys as well</ins> </blockquote></td></table 
 

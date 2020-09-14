@@ -10,7 +10,7 @@ public enum TextStyle {
     UNDERLINED("<ins>","</ins>"),
     MONOSPACED("<samp>","</samp>"),
     KEYBOARD("<kbd>","</kbd>"),
-    NOTE("> ***NOTE:*** ", "");
+    NOTE("<table<td><blockquote>:information_source:<i><b>NOTE: </b></i>", "</blockquote></td></table");
 
     private final String startMark;
     private final String endMark;
