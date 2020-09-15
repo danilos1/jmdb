@@ -2,8 +2,6 @@ package com.jmdb.content.lists;
 
 import com.jmdb.core.MarkdownConversion;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MarkdownDefinitionList extends MarkdownList implements MarkdownConversion {
@@ -15,7 +13,7 @@ public class MarkdownDefinitionList extends MarkdownList implements MarkdownConv
     @Override
     public String toMarkdown() {
         StringBuilder listBuilder = new StringBuilder("<dl>\n");
-        List<ListItem> defListItem = super.getList();
+        List<ListItem> defListItem = super.getListItems();
         for (int i = 0; i < defListItem.size(); i++) {
             DefinitionListItem d = ((DefinitionListItem) defListItem.get(i));
             listBuilder.append("\t<dt>").append(d.getItem()).append("</dt>\n");
@@ -25,5 +23,10 @@ public class MarkdownDefinitionList extends MarkdownList implements MarkdownConv
         }
         listBuilder.append("</dl>\n");
         return listBuilder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "MarkdownDefinitionList{"+super.getListSize()+"}";
     }
 }

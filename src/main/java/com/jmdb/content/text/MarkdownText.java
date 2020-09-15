@@ -31,8 +31,8 @@ public class MarkdownText implements MarkdownConversion {
     }
 
     public MarkdownText setTextStyle(TextStyle style) {
-        textList.add(0, style.getStartMark());
-        textList.add(style.getEndMark());
+        textList.add(0, style.getStartMark() + '\n');
+        textList.add('\n'+style.getEndMark());
         return this;
     }
 
@@ -49,7 +49,7 @@ public class MarkdownText implements MarkdownConversion {
 
     @Override
     public String toString() {
-        return "MarkdownParagraph{"+textList+"}";
+        return "MarkdownText";
     }
 
 
@@ -62,6 +62,11 @@ public class MarkdownText implements MarkdownConversion {
     public MarkdownText emphasize(TextStyle textStyle) {
         int last = textList.size() - 1;
         textList.set(last, textStyle.getStartMark() + textList.get(last).trim() + textStyle.getEndMark());
+        return this;
+    }
+
+    public MarkdownText emphasize(int index, TextStyle textStyle) {
+        textList.set(index, textStyle.getStartMark() + textList.get(index).trim() + textStyle.getEndMark());
         return this;
     }
 }

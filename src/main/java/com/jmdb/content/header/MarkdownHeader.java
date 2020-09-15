@@ -30,6 +30,6 @@ public class MarkdownHeader implements MarkdownConversion {
 
     @Override
     public String toString() {
-        return "MarkdownHeader{"+header+", "+headerLevel+"}";
+        return "MarkdownHeader{'"+header+"', "+headerLevel+"}";
     }
 }

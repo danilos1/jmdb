@@ -34,4 +34,9 @@ public class MarkdownHorizontalRule implements MarkdownConversion {
     public String toMarkdown() {
         return horizontalRule;
     }
+
+    @Override
+    public String toString() {
+        return "MarkdownHorizontalRule{'"+horizontalRule.charAt(0)+"'}";
+    }
 }

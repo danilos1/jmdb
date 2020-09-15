@@ -4,11 +4,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 -------------------------
 
-| Syntax     | Description | Test text    |
-|---:        |:---         |:---          |
-| Header     | Title       | Here's this  | 
-| Paragraph  | Text        | And          | 
-
 1. Syntax
 2. Description
 3. Text
@@ -100,10 +95,10 @@ public class MarkdownTestApp
                         "ontaining Lorem Ipsum passages, and more recently with desktop " +
                         "publishing software like Aldus PageMaker including versions of " +
                         "Lorem Ipsum."),
-                new MarkdownHorizontalRule(25),
-                new MarkdownTable(new String[]{"Syntax", "Description", "Test text"}).
-                        addRow(new Object[]{"Header", "Title", "Here's this"})
-                        .addRow(new Object[]{"Paragraph", "Text", "And"}).setAligns(TableAlign.RIGHT, TableAlign.LEFT)
+                new MarkdownHorizontalRule(25)
+//                new MarkdownTable("Syntax", "Description", "Test text")
+//                        .addRow(new Object[]{"Header", "Title", "Here's this"})
+//                        .addRow(new Object[]{"Paragraph", "Text", "And"}).setAligns(TableAlign.RIGHT, TableAlign.LEFT)
 
         );
         builder.append(new MarkdownList(
@@ -160,11 +155,58 @@ public class MarkdownTestApp
                 .append("you can add keyboard hotkeys as well").emphasize(TextStyle.UNDERLINED)
                 .setTextStyle(TextStyle.NOTE)
         );
+
+        MarkdownText markdownText = new MarkdownText("Hello");
+        markdownText.append("builder.append(\n" +
+                "                new MarkdownText(\"Ctrl\").emphasize(TextStyle.KEYBOARD)\n" +
+                "                .append(\" + \").emphasize(TextStyle.ITALIC)\n" +
+                "                .append(\"Shift\").emphasize(TextStyle.KEYBOARD)\n" +
+                "                .append(\"+\")\n" +
+                "                .append(\"A\").emphasize(TextStyle.KEYBOARD)\n" +
+                "                .append(\"you can add keyboard hotkeys as well\").emphasize(TextStyle.UNDERLINED)\n" +
+                "                .setTextStyle(TextStyle.NOTE)\n" +
+                "        );");
+        markdownText.emphasize(0, TextStyle.UNDERLINED);
+        markdownText.setTextStyle(TextStyle.CODE);
+        builder.append(markdownText);
+
+
+        MarkdownTable table = new MarkdownTable("Goods", "Prices");
+        table.addColumn("Date", new Object[]{});
+
+        table.addRow(new Object[]{"Light bulb", "5$", "15.09.2020"});
+
+        table.addColumn("Company", new Object[]{"G"});
+
+        table.setAligns(TableAlign.CENTER, TableAlign.RIGHT);
+
+        table.setAlign(table.getColumnDimensions() - 1, TableAlign.CENTER);
+
+        builder.append(table);
         builder.build();
     }
 }
  
 ``` 
 
-<table><td><blockquote><i><b>NOTE: </b></i> <kbd>Ctrl</kbd> <i>+</i> <kbd>Shift</kbd> + <kbd>A</kbd> <ins>you can add keyboard hotkeys as well</ins> </blockquote></td></table> 
+<table><td><blockquote><i><b>NOTE: </b></i>
+ <kbd>Ctrl</kbd> <i>+</i> <kbd>Shift</kbd> + <kbd>A</kbd> <ins>you can add keyboard hotkeys as well</ins> 
+</blockquote></td></table> 
+
+```
+ <ins>Hello</ins> builder.append(
+                new MarkdownText("Ctrl").emphasize(TextStyle.KEYBOARD)
+                .append(" + ").emphasize(TextStyle.ITALIC)
+                .append("Shift").emphasize(TextStyle.KEYBOARD)
+                .append("+")
+                .append("A").emphasize(TextStyle.KEYBOARD)
+                .append("you can add keyboard hotkeys as well").emphasize(TextStyle.UNDERLINED)
+                .setTextStyle(TextStyle.NOTE)
+        ); 
+
+``` 
+
+| Goods       | Prices | Date        | Company |
+|:---:        |---:    |:---         |:---:    |
+| Light bulb  | 5$     | 15.09.2020  | G       | 
 

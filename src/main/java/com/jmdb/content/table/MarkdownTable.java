@@ -17,8 +17,8 @@ import java.util.NoSuchElementException;
 public class MarkdownTable implements MarkdownConversion {
     private Object[][] data;
     private String[] titles;
-    private int row, col;
     private TableAlign[] aligns;
+    private int row, col;
 
 
     /**
@@ -53,7 +53,7 @@ public class MarkdownTable implements MarkdownConversion {
      * The initial capacity of data array 15 by 15 next size will increase or decrease, according to adding or removing rows or columns.
      * @param titles is an array of columns titles, also it's defined an initial number of columns
      */
-    public MarkdownTable(String[] titles) {
+    public MarkdownTable(String...titles) {
         this.titles = titles;
         this.col = titles.length;
         this.aligns = new TableAlign[titles.length];
@@ -192,8 +192,30 @@ public class MarkdownTable implements MarkdownConversion {
      * Added a new column to a table.
      * @param objects array of new column, its length must be equaled to <code>row</code>
      */
-    public void addColumn(Object[] objects) {
+    public void addColumn(String title, Object[] objects) {
+        int l = objects.length;
+        if (l != row)
+            throw new MarkdownTableSizeException("Invalid column's length. Expected: "+row+", but founded: "+
+                    l);
+        String[] tempTitles = new String[titles.length + 1];
+        TableAlign[] tempTableAligns = new TableAlign[titles.length + 1];
 
+        tempTitles[tempTitles.length - 1] = title;
+        tempTableAligns[tempTitles.length - 1] = TableAlign.LEFT;
+        System.arraycopy(titles, 0, tempTitles, 0, col);
+        System.arraycopy(aligns, 0, tempTableAligns, 0, col);
+
+        titles = tempTitles;
+        aligns = tempTableAligns;
+        col++;
+
+        checkSize();
+        Object[][] tempData = new Object[data.length][col];
+        for (int i = 0; i < row; i++) {
+            System.arraycopy(data[i], 0, tempData[i], 0, data[i].length);
+            tempData[i][col - 1] = objects[i];
+        }
+        data = tempData;
     }
 
     @Override
@@ -201,13 +223,15 @@ public class MarkdownTable implements MarkdownConversion {
         StringBuilder sb = new StringBuilder();
 
         int[] columnLengths = new int[col];
-        for (int i = 0; i < col; i++) {
-            int maxLength = String.valueOf(data[0][i]).length();
-            for (int j = 1; j < row; j++) {
-                int cur = String.valueOf(data[j][i]).length();
-                if (Math.abs(cur) > Math.abs(maxLength)) maxLength = cur;
+        if (row != 0) {
+            for (int i = 0; i < col; i++) {
+                int maxLength = String.valueOf(data[0][i]).length();
+                for (int j = 1; j < row; j++) {
+                    int cur = String.valueOf(data[j][i]).length();
+                    if (Math.abs(cur) > Math.abs(maxLength)) maxLength = cur;
+                }
+                columnLengths[i] = maxLength + 1;
             }
-            columnLengths[i] = maxLength + 1;
         }
 
         for (int i = 0; i < columnLengths.length; i++) {
@@ -216,12 +240,12 @@ public class MarkdownTable implements MarkdownConversion {
             columnLengths[i] = colLen & ((titleLen - colLen) >> 31) | titleLen & (~(titleLen - colLen) >> 31);
         }
 
-
         sb.append("|");
         for (int i = 0; i < columnLengths.length; i++) {
             String format = " %-"+(columnLengths[i]+1)+"s|";
             sb.append(String.format(format, titles[i]));
         }
+
         sb.append("\n");
         for (int i = 0; i < columnLengths.length; i++) {
             sb.append(aligns[i].getAlign());
@@ -229,6 +253,7 @@ public class MarkdownTable implements MarkdownConversion {
                 sb.append(" ");
             }
         }
+
         sb.append("|\n");
         for (int i = 0; i < row; i++) {
             sb.append("| ");
@@ -249,5 +274,9 @@ public class MarkdownTable implements MarkdownConversion {
             this.aligns[i] = aligns[i];
         }
         return this;
+    }
+
+    public void setAlign(int idx, TableAlign align) {
+        aligns[idx] = align;
     }
 }

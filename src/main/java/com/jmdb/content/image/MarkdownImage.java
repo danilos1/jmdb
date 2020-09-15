@@ -27,6 +27,14 @@ public class MarkdownImage implements MarkdownConversion {
         this.align = align;
     }
 
+    public ImageAlign getAlign() {
+        return align;
+    }
+
+    public void setAlign(ImageAlign align) {
+        this.align = align;
+    }
+
     public String getPath() {
         return path;
     }
@@ -48,5 +56,14 @@ public class MarkdownImage implements MarkdownConversion {
         return String.format("<p align=\"%s\">\n" +
                 "\t<img src=\"%s\" alt=\"%s\"/>\n" +
                 "</p>\n", align.name(), path, alt);
+    }
+
+    public MarkdownImage asLink(String URL) {
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "MarkdownImage{"+path+"}";
     }
 }
